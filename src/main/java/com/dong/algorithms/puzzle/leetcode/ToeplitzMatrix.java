@@ -24,6 +24,7 @@ public class ToeplitzMatrix {
 		};
 		
 		System.out.println(isToeplitzMatrix(matrixA));
+		System.out.println(isToeplitzMatrix2(matrixA));
 
 		int[][] matrixB = {
 				{ 1, 2 },
@@ -31,6 +32,7 @@ public class ToeplitzMatrix {
 		};
 		
 		System.out.println(isToeplitzMatrix(matrixB));
+		System.out.println(isToeplitzMatrix2(matrixB));
 	}
 	
 	public static boolean isToeplitzMatrix(int[][] matrix) {
@@ -45,6 +47,18 @@ public class ToeplitzMatrix {
 				}
 			}
 		}
+		return true;
+	}
+	
+	public static boolean isToeplitzMatrix2(int[][] matrix) {
+		for(int r = 1; r < matrix.length; r++) {
+			for(int c = 1; c < matrix[0].length; c++) {
+				if(matrix[r][c] != matrix[r - 1][c -1]) {
+					return false;
+				}
+			}
+		}
+		
 		return true;
 	}
 }
